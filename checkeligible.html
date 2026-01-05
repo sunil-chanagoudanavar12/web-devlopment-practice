@@ -1,28 +1,100 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <title>JavaScript</title>
+    <title>JavaScript Voting Check</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(239, 241, 241);
+            margin-top: 70px;
+        }
+        .form-a{
+            height:500px;
+            width:500px;
+            border:1px solid black;
+            border-radius: 20px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e6e7e8;
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+        }
+        .title{
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 90px;
+            text-align: center;
+        }
+
+        .age-input{
+            height: 40px;
+            padding-left: 10px;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .button{
+            height:40px;
+            border:none;
+            color:white;
+            background-color: orange;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .button:hover{
+            background-color: darkorange;
+        }
+        #result{
+            margin-top: 20px;
+            font-size: 18px;
+            text-align: center;
+        }
+        .success{
+            color: green;
+        }
+        .error{
+            color: red;
+        }
+    </style>
 </head>
+
 <body>
+    <div class="form-a">
+        <form name="form1">
+            <label class="title">
+                Enter your age and check voting eligibility
+            </label>
+            <input type="number" name="age" class="age-input" placeholder="Enter your age">
+            <input type="button" class="button" value="Check" onclick="clickme()">
+            <p id="result"></p>
+        </form>
+    </div>
+    <script>
+        function clickme() {
+            var age = document.forms["form1"]["age"].value;
+            var result = document.getElementById("result");
 
-<form name="form1">
-    <label>Enter Age:</label>
-    <input type="number" name="age">
-    <br><br>
-    <input type="button" value="Check" onclick="clickme()">
-</form>
-
-<script>
-function clickme() {
-    var age = form1.age.value;
-
-    if (age > 18) {
-        alert("You are eligible to vote");
-    } else {
-        alert("You are not eligible to vote");
-    }
-}
-</script>
-
+            if (age === "") {
+                result.textContent = "Please enter your age ";
+                result.className = "error";
+            } 
+            else if (age >= 18) {
+                result.textContent = "You are eligible to vote ";
+                result.className = "success";
+            } 
+            else {
+                result.textContent = "You are not eligible to vote ";
+                result.className = "error";
+            }
+        }
+    </script>
 </body>
 </html>
-

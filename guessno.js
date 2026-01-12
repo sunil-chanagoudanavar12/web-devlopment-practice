@@ -1,6 +1,6 @@
-// random number between 1 to 10
+
 let a = Math.floor(Math.random() * 10) + 1;
-console.log(a); // testing purpose
+console.log(a); 
 let test=0;
 let b;
 
@@ -9,7 +9,7 @@ while (true) {
     test++;
 
     if (a === b) {
-        alert(`🎉 Congratulations! You guessed the correct number.  ${100-test}`);
+        alert(` Congratulations! You guessed the correct number.  ${100-test}`);
         break;
     } 
     else if (b < a) {

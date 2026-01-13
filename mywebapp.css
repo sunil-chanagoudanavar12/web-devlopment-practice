@@ -30,7 +30,7 @@ body{
     justify-content:center;
     flex-direction: column;
     align-items:center;
-    margin-top:-80px;
+    margin-top:-0px;
 }
 h1{
     font-size:40px;
@@ -98,7 +98,7 @@ input{
     display:flex;
     justify-content: center;
     /* align-items: center; */
-    background-color: #ece7e7;
+    background-color: #bedcf7;
     margin-top:20px;
     flex-direction: column;
 }
@@ -109,6 +109,6 @@ input{
     height:50px;
     width:100%;
     border:1px solid #749ef3;
-    background-color: #bedcf7;
+    background-color: #c0d9ef;
     padding:5px;
 }
